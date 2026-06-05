@@ -1,246 +1,393 @@
-# 🗺 Lushnja Smart City Guide
+# Lushnja Smart City Guide DSA
 
-> **University Course Project — Data Structures and Algorithms (DSA)**
->
-> A smart city guide application for Lushnja, Albania with interactive map, graph algorithms, AI chatbot, and parking assistant.
+## Overview
 
----
+**Lushnja Smart City Guide DSA** is a JavaFX desktop application developed as a project for the **Data Structures and Algorithms (DSA)** course.
 
-## 📌 Overview
+The project represents a smart city guide for the city of **Lushnja, Albania**. It helps users explore important places, find routes, use graph algorithms, check parking information, switch between English and Albanian, and interact with an AI-powered assistant.
 
-**Lushnja Smart City Guide** is a Java/JavaFX desktop application that serves as a smart city assistant for Lushnja, Albania. Built for the DSA course, it demonstrates core computer science concepts through a real-world city navigation system.
-
-**Default language: English** (switch to Albanian with the EN/SQ button)
+The main goal of this project is to demonstrate how **Data Structures and Algorithms** can be applied in a real-world navigation and city guide system.
 
 ---
 
-## ✨ Features
+## Main Purpose
 
-| Feature | Description |
-|---|---|
-| 🗺 **Interactive Map** | City graph visualization with zoom, pan, and click-to-select |
-| 🔍 **Search & Filter** | Find places by name or category |
-| 🧭 **Shortest Path** | Dijkstra, BFS, DFS route finding with detailed DSA output |
-| 🔬 **BFS/DFS Traversal** | Visual graph traversal with numbered visit order |
-| 🚨 **Emergency Mode** | Instantly find nearest hospital, pharmacy, police, taxi |
-| 🗺 **Tourist Mode** | Recommended 1-day itinerary for first-time visitors |
-| 🅿 **Parking Assistant** | Real-time free spaces simulation with status indicator |
-| 🤖 **AI Chatbot** | Floating Gemini-powered assistant (EN/SQ) |
-| ⭐ **Favorites** | Save and manage favorite places |
-| 🌙 **Day/Night Mode** | Light and dark map themes |
-| 🇬🇧🇦🇱 **EN / SQ Switch** | Full English and Albanian UI with one click |
+This project focuses on applying DSA concepts in a practical application.
+
+The city of Lushnja is represented as a graph where:
+
+* Locations are represented as **nodes**
+* Roads are represented as **edges**
+* Distances and travel times are represented as **weights**
+* Algorithms are used to explore and find routes between locations
 
 ---
 
-## 🔬 DSA Concepts Demonstrated
+## Features
 
-### Graph Data Structure
-- **Nodes (V)**: 35 real places in Lushnja (restaurants, hospitals, parks, etc.)
-- **Edges (E)**: 73 road segments with weights (distance in km)
-- Implementation: **Adjacency List** in `CityGraph.java`
+### Smart City Guide
 
-### Dijkstra's Algorithm
-- Finds the **shortest distance** or **fastest time** path
-- Uses a **Priority Queue (Min-Heap)** for efficient node selection
-- Time complexity: **O((V+E) log V)**
-- File: `DijkstraAlgorithm.java`
-
-### BFS — Breadth-First Search
-- Explores the graph **level by level**
-- Finds the path with the **minimum number of hops**
-- Time complexity: **O(V + E)**
-- File: `BFSAlgorithm.java`
-
-### DFS — Depth-First Search
-- Explores the graph **depth by depth** with backtracking
-- Finds **alternative paths** through the city
-- Time complexity: **O(V + E)**
-- File: `DFSAlgorithm.java`
-
-### Search & Sort Algorithms
-- **Linear search** by name/category: O(n) — `PlaceService.java`
-- **Sorting by distance** using Haversine formula: O(n log n)
-- **Priority Queue** usage visible in Dijkstra implementation
+* Interactive city map visualization
+* Important places in Lushnja
+* Search functionality
+* Category filtering
+* Place details
+* Tourist mode
+* Emergency mode
+* Parking assistant
+* Day/Night mode
 
 ---
 
-## 🏗 Project Structure
+### Data Structures and Algorithms
 
-```
-LUSHNJA_MAPS/
+The project includes and demonstrates:
+
+* Graph representation
+* Nodes and edges
+* Weighted graph
+* Dijkstra algorithm
+* BFS traversal
+* DFS traversal
+* Searching
+* Sorting
+* Priority Queue usage
+
+---
+
+### Dijkstra Algorithm
+
+The application allows the user to select a starting location and a destination.
+
+The system then calculates the shortest route using **Dijkstra’s Algorithm**.
+
+The output shows:
+
+* Algorithm used
+* Start node
+* Destination node
+* Shortest path
+* Total distance
+* Total estimated time
+* Number of visited nodes
+
+---
+
+### BFS and DFS Traversal
+
+The project also includes:
+
+* Breadth-First Search
+* Depth-First Search
+
+The user can choose a starting node and visualize the traversal order.
+
+The output shows:
+
+* Algorithm used
+* Starting node
+* Traversal order
+* Number of visited nodes
+* Time complexity explanation
+
+---
+
+### Parking Assistant
+
+The application includes a parking assistant that shows parking places in Lushnja.
+
+Each parking location includes:
+
+* Parking name
+* Address
+* Total spaces
+* Free spaces
+* Parking status
+* Price
+
+Parking status can be:
+
+* Available
+* Almost Full
+* Full
+
+---
+
+### Language Support
+
+The application supports two languages:
+
+* English
+* Albanian
+
+The default language is English.
+
+Users can switch the interface language using the **EN / SQ** button.
+
+The language switch updates:
+
+* Buttons
+* Labels
+* Menus
+* Status messages
+* Route results
+* DSA results
+* Chatbot interface
+
+---
+
+### Gemini AI Chatbot
+
+The project includes a floating AI assistant powered by **Gemini API**.
+
+The chatbot can answer questions about:
+
+* Lushnja
+* Places to visit
+* Parking
+* Routes
+* Dijkstra algorithm
+* BFS and DFS
+* Data Structures and Algorithms
+* How the project works
+
+The chatbot appears as a floating button in the bottom-right corner of the application.
+
+---
+
+## Technologies Used
+
+* Java
+* JavaFX
+* Eclipse IDE
+* Gson
+* SLF4J
+* Gemini API
+* Object-Oriented Programming
+* Data Structures and Algorithms
+
+---
+
+## Project Structure
+
+```text
+Lushnja_Smart_City_Guide_DSA/
+│
 ├── src/
-│   ├── com/lushnja/
-│   │   ├── app/
-│   │   │   ├── MainApp.java               ← Entry point
-│   │   │   └── GeminiTest.java            ← API test utility
-│   │   ├── core/
-│   │   │   ├── graph/
-│   │   │   │   └── CityGraph.java         ← Adjacency list graph
-│   │   │   ├── model/
-│   │   │   │   ├── Location.java          ← Graph node
-│   │   │   │   ├── Road.java              ← Weighted edge
-│   │   │   │   └── Route.java             ← Route result
-│   │   │   └── algorithms/
-│   │   │       ├── DijkstraAlgorithm.java ← Shortest path
-│   │   │       ├── BFSAlgorithm.java      ← BFS traversal
-│   │   │       └── DFSAlgorithm.java      ← DFS traversal
-│   │   ├── models/
-│   │   │   ├── Place.java                 ← City place with category
-│   │   │   ├── ParkingSpot.java           ← Parking model
-│   │   │   └── WeatherInfo.java           ← (unused in UI)
-│   │   ├── services/
-│   │   │   ├── AIChatService.java         ← Gemini API integration
-│   │   │   ├── ApiConfig.java             ← API key reader
-│   │   │   ├── ChatbotService.java        ← Rule-based fallback
-│   │   │   ├── DataLoaderService.java     ← CSV data loader
-│   │   │   ├── NavigationService.java     ← Algorithm orchestrator
-│   │   │   ├── ParkingService.java        ← Parking management
-│   │   │   └── PlaceService.java          ← Search, filter, sort
-│   │   ├── gui/
-│   │   │   └── view/
-│   │   │       ├── MainView.java          ← Main window + all panels
-│   │   │       └── MapCanvasView.java     ← Canvas map renderer
-│   │   └── utils/
-│   │       ├── GeoUtils.java             ← Haversine, formatting
-│   │       └── LanguageManager.java      ← EN/SQ i18n manager
+│   ├── com.lushnja.app
+│   │   └── MainApp.java
+│   │
+│   ├── com.lushnja.core.algorithms
+│   │   ├── DijkstraAlgorithm.java
+│   │   ├── BFSAlgorithm.java
+│   │   └── DFSAlgorithm.java
+│   │
+│   ├── com.lushnja.core.graph
+│   │   └── CityGraph.java
+│   │
+│   ├── com.lushnja.core.model
+│   │   ├── Location.java
+│   │   ├── Road.java
+│   │   └── Route.java
+│   │
+│   ├── com.lushnja.gui.view
+│   │   ├── MainView.java
+│   │   └── MapCanvasView.java
+│   │
+│   ├── com.lushnja.models
+│   │   ├── Place.java
+│   │   └── ParkingSpot.java
+│   │
+│   ├── com.lushnja.services
+│   │   ├── AIChatService.java
+│   │   ├── ChatbotService.java
+│   │   ├── DataLoaderService.java
+│   │   ├── NavigationService.java
+│   │   ├── ParkingService.java
+│   │   └── PlaceService.java
+│   │
+│   ├── com.lushnja.utils
+│   │   └── LanguageManager.java
+│   │
 │   └── resources/
+│       ├── css/
 │       ├── data/
-│       │   ├── locations.csv             ← 35 Lushnja places
-│       │   ├── roads.csv                 ← 73 road connections
-│       │   └── parking.csv              ← 8 parking spots
-│       ├── i18n/
-│       │   ├── messages_en.properties    ← English UI strings
-│       │   └── messages_sq.properties   ← Albanian UI strings
-│       └── css/
-│           └── style.css                ← Application styles
-├── .classpath                           ← Eclipse build config
-├── .project                             ← Eclipse project config
-└── README.md                            ← This file
+│       └── i18n/
+│
+├── .settings/
+├── .classpath
+├── .project
+├── .gitignore
+└── README.md
 ```
 
 ---
 
-## 🚀 How to Run in Eclipse
+## How to Run the Project in Eclipse
 
-### Requirements
-- **Java 21+** (JDK 21 or newer)
-- **JavaFX SDK 21** — Download from [gluonhq.com/products/javafx](https://gluonhq.com/products/javafx/)
-- **Gson JAR** — Download from [mvnrepository.com/artifact/com.google.code.gson/gson](https://mvnrepository.com/artifact/com.google.code.gson/gson)
-- **Eclipse IDE 2023+**
+### 1. Download or Clone the Repository
 
-### Steps
-
-**1. Import the project:**
-```
-File → Import → Existing Projects into Workspace → select LUSHNJA_MAPS folder
+```bash
+git clone https://github.com/your-username/Lushnja_Smart_City_Guide_DSA.git
 ```
 
-**2. Add JavaFX JARs to Build Path:**
-```
-Right-click project → Build Path → Configure Build Path
-→ Libraries → Add External JARs
-→ Select all JARs from javafx-sdk-21/lib/
+### 2. Open Eclipse
+
+Open Eclipse IDE.
+
+### 3. Import the Project
+
+Go to:
+
+```text
+File → Import → General → Existing Projects into Workspace
 ```
 
-**3. Add Gson JAR to Build Path:**
-```
-Build Path → Add External JARs → select gson-2.x.x.jar
+Select the project folder and click **Finish**.
+
+### 4. Add Required Libraries
+
+Make sure the following libraries are added to the project build path:
+
+* JavaFX SDK
+* Gson
+* SLF4J API
+* SLF4J Simple
+
+JavaFX should be added to the **Modulepath**.
+
+Gson and SLF4J should be added to the **Classpath**.
+
+---
+
+## JavaFX VM Arguments
+
+To run the application, JavaFX VM arguments must be added in Eclipse.
+
+Go to:
+
+```text
+Run → Run Configurations → Arguments → VM arguments
 ```
 
-**4. Configure VM Arguments:**
+Example:
+
+```text
+--module-path "C:\path\to\javafx-sdk\lib" --add-modules javafx.controls,javafx.fxml,javafx.graphics,javafx.base,javafx.web,javafx.media,javafx.swing
 ```
-Run → Run Configurations → Arguments → VM Arguments
+
+Replace the path with the real JavaFX SDK path on your computer.
+
+---
+
+## Gemini API Setup
+
+The chatbot uses Gemini API.
+
+The API key must not be written directly inside the code.
+
+Instead, add it as an environment variable in Eclipse.
+
+Go to:
+
+```text
+Run → Run Configurations → Environment → Add
 ```
+
 Add:
-```
---module-path "C:\path\to\javafx-sdk-21\lib" --add-modules javafx.controls,javafx.fxml,javafx.graphics,javafx.base,javafx.web,javafx.media
-```
 
-**5. Set Gemini API Key (optional but recommended):**
-```
-Run → Run Configurations → Environment → New
-Name:  GEMINI_API_KEY
+```text
+Name: GEMINI_API_KEY
 Value: your_gemini_api_key
 ```
-> Without the key, the chatbot shows a helpful fallback message.  
-> Get a free key at [aistudio.google.com](https://aistudio.google.com/)
 
-**6. Run:**
+The project reads the key using:
+
+```java
+System.getenv("GEMINI_API_KEY")
 ```
-Right-click MainApp.java → Run As → Java Application
+
+If the API key is missing, the application will use a fallback response and will not crash.
+
+---
+
+## Important Security Note
+
+Do not upload API keys to GitHub.
+
+Do not write the API key directly in Java files.
+
+Do not upload screenshots that contain API keys.
+
+Recommended `.gitignore` content:
+
+```gitignore
+bin/
+*.class
+.env
+config.properties
+*.log
+target/
+*.launch
+.metadata/
 ```
 
 ---
 
-## 🌐 Language Switch
+## DSA Concepts Explained
 
-Click the **EN / SQ** button in the top-right header to instantly switch between:
-- 🇬🇧 **English** (default)
-- 🇦🇱 **Albanian (Shqip)**
+### Graph
 
-All UI labels, buttons, categories, status messages, and DSA output update immediately.  
-The AI chatbot also answers in the selected language.
+The city is modeled as a graph.
 
----
+Each location is a node, and each road is an edge.
 
-## 🤖 Gemini AI Chatbot
+### Dijkstra Algorithm
 
-The floating chat button (💬 bottom-right) opens the AI assistant powered by **Gemini 2.5 Flash**.
+Dijkstra is used to find the shortest path between two locations based on weighted distances.
 
-**It can answer questions about:**
-- Places in Lushnja (restaurants, cafes, hotels, pharmacies...)
-- How to get somewhere (routes, Dijkstra)
-- DSA algorithm explanations (Dijkstra, BFS, DFS, graphs)
-- Parking availability
-- Tourism in Lushnja
-- Albanian history and culture
+### BFS
 
-**API key configuration:**
-- Set environment variable `GEMINI_API_KEY` in Eclipse Run Configurations
-- Never commit the API key to source control
-- If missing, a clear fallback message is shown
+BFS is used to explore the graph level by level from a selected starting node.
+
+### DFS
+
+DFS is used to explore the graph deeply by visiting connected nodes recursively or using a stack.
+
+### Priority Queue
+
+A priority queue is used in Dijkstra’s algorithm to always process the nearest unvisited node first.
 
 ---
 
-## 🅿 Parking Assistant
+## Academic Purpose
 
-The **Parking** tab shows all 8 parking locations in Lushnja with:
-- Real-time free space count (simulated)
-- Color-coded status: 🟢 Available / 🟡 Almost Full / 🔴 Full
-- Price (free or paid)
-- Click "Simulate Update" to refresh parking availability
+This project was developed for the **Data Structures and Algorithms** course.
+
+It demonstrates how theoretical DSA concepts can be used to solve real-world problems such as city navigation, route finding, and graph traversal.
 
 ---
 
-## 📊 Data Files
+## Future Improvements
 
-| File | Contents |
-|---|---|
-| `locations.csv` | 35 places: name, coordinates, category, address, rating, hours, description |
-| `roads.csv` | 73 road connections: source, destination, distance, type, speed limit |
-| `parking.csv` | 8 parking spots: name, location, capacity, free spaces, price |
+Possible future improvements include:
 
----
-
-## 🔧 Technologies Used
-
-- **Java 21** — main language (virtual threads, records, pattern matching)
-- **JavaFX 21** — GUI and Canvas rendering
-- **Java HTTP Client** — Gemini API calls (no extra HTTP library needed)
-- **Gson** — JSON parsing for Gemini API responses
-- **Java Collections** — PriorityQueue, LinkedHashMap, LinkedHashSet
+* Real-time maps API integration
+* Real-time traffic data
+* Live parking availability
+* More detailed tourist recommendations
+* User accounts and saved favorite places
+* Mobile version
+* More cities in Albania
 
 ---
 
-## 🔮 Possible Improvements
+## Author
 
-- [ ] Live Gemini streaming responses
-- [ ] OpenStreetMap integration for real map tiles
-- [ ] Route animation on the map
-- [ ] Export itinerary as PDF
-- [ ] Real parking API integration
-- [ ] More DSA visualizations (priority queue animation)
+**Bajram Haxhiu**
 
 ---
 
-*Lushnje, Albania — 40.94°N, 19.71°E*
+## License
+
+This project is created for educational and academic purposes.
