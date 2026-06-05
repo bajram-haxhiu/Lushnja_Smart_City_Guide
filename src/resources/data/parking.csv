@@ -1,0 +1,9 @@
+id,name,latitude,longitude,address,totalSpaces,freeSpaces,status,price
+P001,Parkimi Sheshi Qendror,40.94230,19.70560,Afër Sheshit Toka Jonë,50,23,I LIRË,Falas
+P002,Parkimi Spitalit,40.93450,19.71050,Rruga Spitalit,40,38,I LIRË,Falas
+P003,Parkimi Bashkisë,40.94300,19.70580,Afër Bashkisë,30,5,POTHUAJSE PLOT,Falas
+P004,Parkimi Stacionit,40.93970,19.69900,Afër Stacionit,60,41,I LIRË,Falas
+P005,Parkimi Tregut,40.95090,19.68960,Rruga e Tregut,35,0,PLOT,Falas
+P006,Parkimi Stadiumit,40.93580,19.70960,Rruga Skënderbej,45,30,I LIRË,Falas
+P007,Parkimi Hotel Pilo,40.94330,19.70440,Hotel Pilo Lala,20,8,I LIRË,Me pagesë
+P008,Parkimi Gjimnazit,40.94140,19.70490,Rruga Teknike,25,15,I LIRË,Falas
