@@ -228,7 +228,7 @@ Lushnja_Smart_City_Guide_DSA/
 ### 1. Download or Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/Lushnja_Smart_City_Guide_DSA.git
+git clone https://github.com/bajram-haxhiu/Lushnja_Smart_City_Guide_DSA.git
 ```
 
 ### 2. Open Eclipse
